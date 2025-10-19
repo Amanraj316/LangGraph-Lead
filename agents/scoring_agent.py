@@ -1,18 +1,11 @@
 # agents/scoring_agent.py
 
 import time
-from typing import List, Dict, Any
+from typing import Dict, Any
 
 def run_scoring_agent(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Scores enriched leads based on a simple scoring model.
-
-    Args:
-        state (Dict[str, Any]): The current state of the graph.
-        config (Dict[str, Any]): The configuration for this specific step.
-
-    Returns:
-        Dict[str, Any]: An update to the state with the ranked leads.
+    Scores enriched leads based on roles and technologies.
     """
     print("\n--- EXECUTING SCORING AGENT ---")
 
@@ -22,8 +15,6 @@ def run_scoring_agent(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str
         return {}
 
     print(f"Scoring {len(enriched_leads)} leads...")
-
-    # Simulate processing time
     time.sleep(1)
 
     ranked_leads = []
@@ -44,11 +35,10 @@ def run_scoring_agent(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str
 
         lead['score'] = score
         ranked_leads.append(lead)
-
-    # Sort leads by score in descending order
+    
     ranked_leads.sort(key=lambda x: x['score'], reverse=True)
 
     print("Lead scoring complete.")
     print("--- SCORING AGENT COMPLETED ---")
-
+    
     return {"ranked_leads": ranked_leads}

@@ -37,17 +37,17 @@ def run_outreach_content_agent(state: Dict[str, Any], config: Dict[str, Any]) ->
 
     # Define the prompt template
     prompt = ChatPromptTemplate.from_messages([
-        ("system", "You are an expert Sales Development Representative (SDR). Your goal is to write a short, friendly, and highly personalized cold email. Use the provided context to make the email relevant to the recipient."),
-        ("human", """
-        Here is the context for the lead:
-        - Contact Name: {contact_name}
-        - Company: {company}
-        - Role: {role}
-        - Recent Signal: {signal}
-        - Key Technologies they use: {technologies}
+    ("system", "You are an expert Sales Development Representative (SDR). Your goal is to write a short, friendly, and highly personalized cold email. Use the provided context to make the email relevant to the recipient."),
+    ("human", """
+    Here is the context for the lead:
+    - Contact Name: {contact_name}
+    - Company: {company}
+    - Role: {role}
+    - Recent Signal: {signal}
+    - Key Technologies they use: {technologies}
 
-        Based on this, write a compelling but brief email body. Do not include a subject line or a greeting like "Hi {contact_name},". Start directly with the opening line.
-        """)
+    Based on this, write a compelling but brief email body. Do not include a subject line or a greeting like "Hi {contact_name},". Start directly with the opening line.
+    """)
     ])
 
     # Define the chain

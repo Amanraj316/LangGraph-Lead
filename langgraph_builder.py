@@ -76,7 +76,7 @@ class WorkflowBuilder:
         self.api_keys['COHERE_API_KEY'] = os.getenv('COHERE_API_KEY')
         self.api_keys['CLAY_API_KEY'] = os.getenv('CLAY_API_KEY')
         self.api_keys['APOLLO_API_KEY'] = os.getenv('APOLLO_API_KEY')
-        self.api_keys['CLEARBIT_KEY'] = os.getenv('CLEARBIT_KEY')
+        self.api_keys['HUNTER_API_KEY'] = os.getenv('HUNTER_API_KEY')
         self.api_keys['SENDGRID_API_KEY'] = os.getenv('SENDGRID_API_KEY')
         self.api_keys['SHEET_ID'] = os.getenv('SHEET_ID')
         print("Environment variables loaded.")

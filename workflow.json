@@ -35,7 +35,7 @@
       "inputs": { "leads": "{{prospect_search.output.leads}}" },
       "instructions": "Enrich lead data using LinkedIn scraping or Clearbit API.",
       "tools": [
-        { "name": "Clearbit", "config": { "api_key": "{{CLEARBIT_KEY}}" } }
+        { "name": "Hunter", "config": { "api_key": "{{HUNTER_API_KEY}}" } }
       ],
       "output_schema": {
         "enriched_leads": [

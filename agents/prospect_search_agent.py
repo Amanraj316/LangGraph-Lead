@@ -1,29 +1,20 @@
 # agents/prospect_search_agent.py
 
 import time
-from typing import List, Dict, Any
+from typing import Dict, Any
 
 def run_prospect_search_agent(state: Dict[str, Any], config: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Simulates searching for prospects using Clay and Apollo APIs.
-
-    Args:
-        state (Dict[str, Any]): The current state of the graph.
-        config (Dict[str, Any]): The configuration for this specific step from workflow.json.
-
-    Returns:
-        Dict[str, Any]: An update to the state with the new leads.
+    Simulates searching for prospects to provide a reliable input for the workflow.
     """
-    print(f"\n--- EXECUTING PROSPECT SEARCH AGENT ---")
-    print(f"Using ICP (Ideal Customer Profile): {config.get('icp')}")
-    print("Searching for leads with Clay and Apollo APIs...")
+    print("\n--- EXECUTING PROSPECT SEARCH AGENT ---")
+    icp = config.get('icp')
+    print(f"Using ICP (Ideal Customer Profile): {icp}")
+    print("Searching for high-quality leads...")
 
-    # Simulate API call latency
     time.sleep(2)
 
-    # --- MOCK API RESPONSE ---
-    # In a real scenario, you would make API calls to Clay/Apollo here.
-    # For this exercise, we'll return a hardcoded list of leads.
+    # --- ORIGINAL MOCK DATA ---
     mock_leads = [
         {
             "company": "InnovateTech Inc.",
@@ -40,9 +31,8 @@ def run_prospect_search_agent(state: Dict[str, Any], config: Dict[str, Any]) -> 
             "signal": "hiring_for_sales"
         }
     ]
-
+    
     print(f"Found {len(mock_leads)} new leads.")
     print("--- PROSPECT SEARCH AGENT COMPLETED ---")
 
-    # The key here MUST match the key in AgentState ('leads')
     return {"leads": mock_leads}
